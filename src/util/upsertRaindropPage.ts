@@ -115,7 +115,12 @@ const ioCreateAnnotationBlock = async (
   return await logseq.Editor.appendBlockInPage(
     currentPage.uuid,
     `${highlightFormatted}\n\n${noteFormatted}`,
-    { properties: { "annotation-id": annotation.id } }
+    {
+      properties: {
+        "annotation-id": annotation.id,
+        "annotation-color": annotation.color,
+      },
+    }
   );
 };
 
